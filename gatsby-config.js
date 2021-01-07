@@ -2,5 +2,5 @@ module.exports = {
   siteMetadata: {
     title: "BIGBrave Challenge",
   },
-  plugins: [],
+  plugins: ["formik"],
 };

@@ -25,4 +25,9 @@
 3.  **Dependencies**
 
     - [Formik](https://formik.org/)
+    - [Yup](https://formik.org/)
 
+    https://formik.org/docs/tutorial
+    https://github.com/nphivu414/react-multi-step-form
+    https://docs.google.com/document/d/1uFDiA5ScGeMvzWVEhkxr_QPmdKih0yn3aGh4NF48fOs/edit?ts=5ff705a5#
+    https://dribbble.com/shots/11944612-Course-web-app/attachments/3571415?mode=media

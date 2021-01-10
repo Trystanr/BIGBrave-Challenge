@@ -37,6 +37,6 @@ export default [
 	}),
 	Yup.object().shape({
 		[occupation.name]: Yup.string().nullable().required(`${occupation.requiredErrorMsg}`),
-		[favouriteColour.name]: Yup.string().required(`${favouriteColour.requiredErrorMsg}`),
+		[favouriteColour.name]: Yup.string().nullable().required(`${favouriteColour.requiredErrorMsg}`)
 	})
 ];

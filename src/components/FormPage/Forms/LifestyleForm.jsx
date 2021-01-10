@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import { useField, Field } from "formik";
 
 import TextField from "../Fields/TextField";
+import ColorField from "../Fields/ColorField";
 import SelectField from "../Fields/SelectField";
+
+import { CirclePicker  } from 'react-color';
+
 
 // This form captures users lifestyle properties
 export default function LifestyleForm(props) {
+
+	const [color, setColor] = useState(0);
 
 	// Defines fields required in this step
 	const {
@@ -13,6 +21,12 @@ export default function LifestyleForm(props) {
 			favouriteColour
 		}
 	} = props;
+
+	function handleChangeComplete(newColor) {
+    	// this.setState({ background: color.hex });
+    	console.log(newColor.hex);
+    	setColor(newColor.hex)
+  	};
 
 	return (
 		<React.Fragment>
@@ -29,12 +43,23 @@ export default function LifestyleForm(props) {
 					<option value="social-media">Social Media Influencer</option>
 				</SelectField>
 
-				<TextField
+				{/*<TextField
+					label={favouriteColour.label}
+					name={favouriteColour.name}
+					type="text"
+					placeholder={favouriteColour.placeholder}
+				/>*/}
+
+				{/*<input value={color} name={favouriteColour.name} readOnly/>*/}
+				{/*<Field type="text" name={favouriteColour.name} value={color} readOnly/>*/}
+				<ColorField 
 					label={favouriteColour.label}
 					name={favouriteColour.name}
 					type="text"
 					placeholder={favouriteColour.placeholder}
 				/>
+
+				{/*<CirclePicker onChangeComplete={ handleChangeComplete }/>*/}
 				
 		</React.Fragment>
 	);

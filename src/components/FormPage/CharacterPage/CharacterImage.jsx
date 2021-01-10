@@ -13,10 +13,9 @@ import mHead from '../../../images/character/m-head.png';
 import oldFHhead from '../../../images/character/old-f-head.png';
 import oldMHead from '../../../images/character/old-m-head.png';
 
-import pants from '../../../images/character/pants.svg';
+// import pants from '../../../images/character/pants.svg';
 
 import Logo from '../../../images/character/PantsItem';
-// import PantsItem from '../../../images/character/PantsItem';
 
 
 import logo from '../../../images/icon.png';
@@ -63,7 +62,7 @@ export default function CharacterImage(props) {
 			<h1>{props.values.firstName} {props.values.lastName}</h1>
 			<div id="characterCont">
 				{/*{<img id="legs" src= {pants} />}*/}
-				{<Logo fill="#fff" className="legs"/>}
+				{<Logo fill={props.values.favouriteColour} className="legs"/>}
 				<img id="torso" src=
 				{
 				    {

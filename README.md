@@ -23,7 +23,8 @@
     The site is now running at http://localhost:8000!
 
 3.  **Dependencies**
-
+    
+    - [Gatsby](https://www.gatsbyjs.com/)
     - [Formik](https://formik.org/)
     - [Yup](https://formik.org/)
 

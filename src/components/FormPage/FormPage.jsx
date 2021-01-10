@@ -31,12 +31,7 @@ export default function FormPage() {
 
 	const currentValidationSchema = validationSchema[activeStep];
 
-	function _sleep(ms) {
-	  	// return new Promise(resolve => setTimeout(resolve, ms));
-	}
-
 	async function _submitForm(values, actions) {
-	  // await _sleep(1000);
 	  console.log(JSON.stringify(values, null, 2));
 	  actions.setSubmitting(false);
 

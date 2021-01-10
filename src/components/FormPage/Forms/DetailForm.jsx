@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Formik, Field, Form } from 'formik';
-
 import TextField from "../Fields/TextField";
 import DatePickerField from "../Fields/DatePickerField";
 import RadioField from "../Fields/RadioField";

@@ -3,7 +3,7 @@ import { useField, Field } from "formik";
 // import * as Yup from 'yup';
 
 const RadioField = ({ label, ...props }) => {
-	const [field, meta] = useField(props);
+	const [meta] = useField(props);
 	return (
 		<>
 			<label>{label}</label>
@@ -12,7 +12,7 @@ const RadioField = ({ label, ...props }) => {
 			{props.data.map((radioObject, i) => 
 				<label key={i}>
 					{/*<input type="radio" value={radioObject.value} name={props.name} id={radioObject.label} {...field}/>*/}
-					<Field type="radio" name={props.name} value={radioObject.value} />
+					<Field type="radio" name={props.name} value={radioObject.value}/>
 					{radioObject.label}
 				</label>
 			)}

@@ -1,12 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-import { useField, Field } from "formik";
-
-import TextField from "../Fields/TextField";
 import ColorField from "../Fields/ColorField";
 import SelectField from "../Fields/SelectField";
-
-import { CirclePicker  } from 'react-color';
 
 
 // This form captures users lifestyle properties

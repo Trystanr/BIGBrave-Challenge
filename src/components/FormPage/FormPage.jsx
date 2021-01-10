@@ -55,13 +55,13 @@ export default function FormPage() {
 	return (
 	    <React.Fragment>
 	    	<div className="stepper">
-	    		<div className={`${activeStep==0 ? "active" : ""} ${activeStep>0 ? "visited" : ""}`}>
+	    		<div className={`${activeStep===0 ? "active" : ""} ${activeStep>0 ? "visited" : ""}`}>
 	    			Personal Details
 	    		</div>
-	    		<div className={`${activeStep==1 ? "active" : ""} ${activeStep>1 ? "visited" : ""}`}>
+	    		<div className={`${activeStep===1 ? "active" : ""} ${activeStep>1 ? "visited" : ""}`}>
 	    			Lifestyle Details
 	    		</div>
-	    		<div className={`${activeStep==2 ? "active" : ""} ${activeStep>2 ? "visited" : ""}`}>
+	    		<div className={`${activeStep===2 ? "active" : ""} ${activeStep>2 ? "visited" : ""}`}>
 	    			Persona
 	    		</div>
 	    	</div>

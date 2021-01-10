@@ -1,14 +1,5 @@
 import React from 'react';
 
-// import LOGO from './pants.svg';
-
-// const Logo = () => <img src={LOGO} className={'logo'} alt="Logo"/>;
-// export default Logo;
-
-// import React from 'react';
-const styleOne = {
-  fill: "#e83737"
-}
 const styleTwo = {
   fill: "#fde0e5"
 }

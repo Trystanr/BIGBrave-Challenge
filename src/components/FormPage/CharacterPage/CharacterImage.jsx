@@ -13,12 +13,7 @@ import mHead from '../../../images/character/m-head.png';
 import oldFHhead from '../../../images/character/old-f-head.png';
 import oldMHead from '../../../images/character/old-m-head.png';
 
-// import pants from '../../../images/character/pants.svg';
-
 import Logo from '../../../images/character/PantsItem';
-
-
-import logo from '../../../images/icon.png';
 
 export default function CharacterImage(props) {
 
@@ -33,22 +28,22 @@ export default function CharacterImage(props) {
 		let hGender = props.values.gender;
 
 		// Toss the coin
-		if (props.values.gender == "other") {
+		if (props.values.gender === "other") {
 			console.log(Math.round(Math.random() * 1));
-			if (Math.round(Math.random() * 1) == 0) {
+			if (Math.round(Math.random() * 1) === 0) {
 				hGender = "female";
 			} else {
 				hGender = "male";
 			}
 		}
 
-		if (hGender == "female") {
+		if (hGender === "female") {
 			if (calcAge(props.values.dob) < 60) {
 				return fHead;
 			} else {
 				return oldFHhead;
 			}
-		} else if (hGender == "male") {
+		} else if (hGender === "male") {
 			if (calcAge(props.values.dob) < 60) {
 				return mHead;
 			} else {
@@ -63,7 +58,7 @@ export default function CharacterImage(props) {
 			<div id="characterCont">
 				{/*{<img id="legs" src= {pants} />}*/}
 				{<Logo fill={props.values.favouriteColour} className="legs"/>}
-				<img id="torso" src=
+				<img id="torso" alt="Character Torso" src=
 				{
 				    {
 				    	'chef': chef,
@@ -73,7 +68,7 @@ export default function CharacterImage(props) {
 				    }[props.values.occupation]
 				}
 				/>
-				<img id="head" src={getHead()} />
+				<img id="head" alt="Character Head" src={getHead()} />
 				
 			</div>
 			<p className="char-blurb">{`What's up, I'm ${props.values.firstName} ${props.values.lastName}, age ${calcAge(props.values.dob)} and I'm a world class ${props.values.occupation}`} </p>

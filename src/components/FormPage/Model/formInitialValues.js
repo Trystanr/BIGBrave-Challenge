@@ -14,7 +14,7 @@ const {
 export default {
 	[firstName.name]: '',
 	[lastName.name]: '',
-	[lastName.gender]: '',
+	[gender.name]: '',
 	[dob.name]: '',
 	[occupation.name]: '',
 	[favouriteColour.name]: ''

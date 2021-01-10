@@ -1,7 +1,6 @@
 import React from 'react';
 
 import TextField from "../Fields/TextField";
-import DatePickerField from "../Fields/DatePickerField";
 import SelectField from "../Fields/SelectField";
 
 // This form captures users lifestyle properties
@@ -17,17 +16,17 @@ export default function LifestyleForm(props) {
 
 	return (
 		<React.Fragment>
-			<h4>1. Personal Details</h4>
+			<h4>2. Lifestyle Details</h4>
 
 				<SelectField
 					label={occupation.label}
 					name={occupation.name}
 				>
-					<option value="">Select a job type</option>
-					<option value="designer">Designer</option>
-					<option value="development">Developer</option>
-					<option value="product">Product Manager</option>
-					<option value="other">Other</option>
+					<option value="">Select your occupation</option>
+					<option value="chef">Chef</option>
+					<option value="yoga">Yoga instructor</option>
+					<option value="developer">Developer</option>
+					<option value="social-media">Social Media Influencer</option>
 				</SelectField>
 
 				<TextField

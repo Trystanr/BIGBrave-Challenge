@@ -2,7 +2,22 @@ import React from 'react';
 
 import TextField from "../Fields/TextField";
 import DatePickerField from "../Fields/DatePickerField";
-import SelectField from "../Fields/SelectField";
+import RadioField from "../Fields/RadioField";
+
+const genders = [
+	{
+	  value: '1',
+	  label: 'Male'
+	},
+	{
+	  value: '2',
+	  label: 'Female'
+	},
+	{
+	  value: '3',
+	  label: 'Other'
+	}
+]
 
 // This form captures users details
 export default function DetailForm(props) {
@@ -36,16 +51,11 @@ export default function DetailForm(props) {
 					name={dob.name}
 					placeholder={dob.placeholder}
 				/>
-				<SelectField
+				<RadioField
 					label={gender.label}
 					name={gender.name}
-				>
-					<option value="">Select a job type</option>
-					<option value="designer">Designer</option>
-					<option value="development">Developer</option>
-					<option value="product">Product Manager</option>
-					<option value="other">Other</option>
-				</SelectField>
+					data={genders}
+				/>
 		</React.Fragment>
 	);
 }

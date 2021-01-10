@@ -1,22 +1,24 @@
 import * as Yup from 'yup';
 import moment from 'moment';
+
 import FormModel from './FormModel';
+
 const {
 	formField: {
 		firstName,
 		lastName,
 		gender,
-		dob
+		dob,
+		occupation,
+		favouriteColour
 	}
 } = FormModel;
-
-const visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
 
 export default [
 	Yup.object().shape({
 		[firstName.name]: Yup.string().required(`${firstName.requiredErrorMsg}`),
 		[lastName.name]: Yup.string().required(`${lastName.requiredErrorMsg}`),
-		[gender.name]: Yup.string().required(`${gender.requiredErrorMsg}`),
+		// [gender.name]: Yup.string().required(`${gender.requiredErrorMsg}`),
 		[dob.name]: Yup.string()
 			.nullable()
 			.required(`${dob.requiredErrorMsg}`)
@@ -33,5 +35,7 @@ export default [
 			})
 	}),
 	Yup.object().shape({
+		[occupation.name]: Yup.string().nullable().required(`${occupation.requiredErrorMsg}`),
+		[favouriteColour.name]: Yup.string().required(`${favouriteColour.requiredErrorMsg}`),
 	})
 ];

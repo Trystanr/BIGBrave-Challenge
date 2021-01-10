@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik';
 
 import DetailForm from './Forms/DetailForm';
 import LifestyleForm from './Forms/LifestyleForm';
+import CharacterPage from './CharacterPage';
 
 import validationSchema from './Model/validationSchema';
 import FormModel from './Model/FormModel';
@@ -18,8 +19,7 @@ function _renderStepContent(step) {
 	    case 1:
 	      	return <LifestyleForm formField={formField} />;
 	    case 2:
-	      // return <ReviewOrder />;
-	      	break;
+	      return <CharacterPage />;
 	    default:
 	      	return <div>Not Found</div>;
 	}
@@ -29,11 +29,28 @@ export default function FormPage() {
 	const [activeStep, setActiveStep] = useState(0);
 	const isLastStep = activeStep === steps.length - 1;
 
-	const currentValidationSchema = validationSchema[0];
+	const currentValidationSchema = validationSchema[activeStep];
+
+	function _sleep(ms) {
+	  	// return new Promise(resolve => setTimeout(resolve, ms));
+	}
+
+	async function _submitForm(values, actions) {
+	  // await _sleep(1000);
+	  console.log(JSON.stringify(values, null, 2));
+	  actions.setSubmitting(false);
+
+	  setActiveStep(activeStep + 1);
+	}
 
 	function _handleSubmit(values, actions) {
-		console.log("Submit");
-		setActiveStep(activeStep + 1);
+		if (isLastStep) {
+		  	_submitForm(values, actions);
+		} else {
+		  	setActiveStep(activeStep + 1);
+		  	actions.setTouched({});
+		  	actions.setSubmitting(false);
+		}
 	}
 
 	function _handleBack() {
@@ -54,16 +71,22 @@ export default function FormPage() {
                 		<div>
                 			
                 			{/*Prevent user from clicking back during first step */}
-	                		{activeStep !== 0 && (
-	                			<button onClick={_handleBack}>
-	                				Back
-	                			</button>
-	                		)}
+                				{(activeStep !== 0) && (isLastStep) && (
+	                				<button onClick={_handleBack}>
+	                					Back
+	                				</button>
+	                			)}
+	                		
 
 	                		<div>
-								<button type="submit">
-									{isLastStep ? "View Persona" : "Next"}
-								</button>
+	                			{ activeStep !== steps.length ? 
+		                			<button type="submit">
+										{isLastStep ? "View Persona" : "Next"}
+									</button> 
+								: 
+									null 
+								}
+								
 	                		</div>
                 			
                 		</div>

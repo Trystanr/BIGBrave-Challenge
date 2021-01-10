@@ -2,26 +2,27 @@ import React, { useState } from "react";
 import { Formik, Form } from 'formik';
 
 import DetailForm from './Forms/DetailForm';
+import LifestyleForm from './Forms/LifestyleForm';
 
 import validationSchema from './Model/validationSchema';
-import checkoutFormModel from './Model/checkoutFormModel';
+import FormModel from './Model/FormModel';
 import formInitialValues from './Model/formInitialValues';
 
-const steps = ['Personal Details', 'Lifestyle', 'Your Persona'];
-const { formId, formField } = checkoutFormModel;
+const steps = ['Personal Details', 'Lifestyle'];
+const { formId, formField } = FormModel;
 
 function _renderStepContent(step) {
-  switch (step) {
-    case 0:
-      return <DetailForm formField={formField} />;
-      // return <h1>Hello Lads</h1>;
-    case 1:
-      // return <PaymentForm formField={formField} />;
-    case 2:
-      // return <ReviewOrder />;
-    default:
-      return <div>Not Found</div>;
-  }
+	switch (step) {
+	    case 0:
+	      	return <DetailForm formField={formField} />;
+	    case 1:
+	      	return <LifestyleForm formField={formField} />;
+	    case 2:
+	      // return <ReviewOrder />;
+	      	break;
+	    default:
+	      	return <div>Not Found</div>;
+	}
 }
 
 export default function FormPage() {
@@ -31,7 +32,8 @@ export default function FormPage() {
 	const currentValidationSchema = validationSchema[0];
 
 	function _handleSubmit(values, actions) {
-		console.log("Submit")
+		console.log("Submit");
+		setActiveStep(activeStep + 1);
 	}
 
 	function _handleBack() {
@@ -45,9 +47,28 @@ export default function FormPage() {
             	validationSchema={currentValidationSchema}
             	onSubmit={_handleSubmit}
           	>
-          		<Form id={formId}>
-                	{_renderStepContent(activeStep)}
-              	</Form>
+          		{({ isSubmitting }) => (
+          			<Form id={formId}>
+                		{_renderStepContent(activeStep)}
+
+                		<div>
+                			
+                			{/*Prevent user from clicking back during first step */}
+	                		{activeStep !== 0 && (
+	                			<button onClick={_handleBack}>
+	                				Back
+	                			</button>
+	                		)}
+
+	                		<div>
+								<button type="submit">
+									{isLastStep ? "View Persona" : "Next"}
+								</button>
+	                		</div>
+                			
+                		</div>
+              		</Form>
+              	)}
           	</Formik>
 	    </React.Fragment>
 	);

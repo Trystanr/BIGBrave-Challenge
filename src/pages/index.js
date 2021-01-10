@@ -60,7 +60,7 @@ const IndexPage = () => {
     <>
       <h1>Persona Time!</h1>
       <FormPage />
-      <Formik
+      {/*<Formik
         initialValues={{
           firstName: '',
           lastName: '',
@@ -127,7 +127,7 @@ const IndexPage = () => {
 
           <button type="submit">Submit</button>
         </Form>
-      </Formik>
+      </Formik>*/}
     </>
   );
 };

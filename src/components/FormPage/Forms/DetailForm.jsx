@@ -1,20 +1,22 @@
 import React from 'react';
 
+import { Formik, Field, Form } from 'formik';
+
 import TextField from "../Fields/TextField";
 import DatePickerField from "../Fields/DatePickerField";
 import RadioField from "../Fields/RadioField";
 
 const genders = [
 	{
-	  value: '1',
+	  value: 'male',
 	  label: 'Male'
 	},
 	{
-	  value: '2',
+	  value: 'female',
 	  label: 'Female'
 	},
 	{
-	  value: '3',
+	  value: 'other',
 	  label: 'Other'
 	}
 ]

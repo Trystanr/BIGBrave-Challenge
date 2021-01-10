@@ -18,7 +18,7 @@ export default [
 	Yup.object().shape({
 		[firstName.name]: Yup.string().required(`${firstName.requiredErrorMsg}`),
 		[lastName.name]: Yup.string().required(`${lastName.requiredErrorMsg}`),
-		// [gender.name]: Yup.string().required(`${gender.requiredErrorMsg}`),
+		[gender.name]: Yup.string().required(`${gender.requiredErrorMsg}`),
 		[dob.name]: Yup.string()
 			.nullable()
 			.required(`${dob.requiredErrorMsg}`)

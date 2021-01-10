@@ -2,7 +2,7 @@
 	width: 20vw;
 	/*height: 50vh;*/
 
-	margin-left: 0vw;
+	margin-left: 10vw;
 	margin-top: 5vh;
 
 	display: flex;
@@ -22,7 +22,7 @@
 		margin-top: -0.1vh;
 	}
 
-	#characterCont #legs {
+	#characterCont .legs {
 		height: 40vh;
 		margin-top: -4.5vh;
 		margin-left: 3vh;

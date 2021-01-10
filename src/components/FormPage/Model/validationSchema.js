@@ -19,13 +19,14 @@ export default [
 		[firstName.name]: Yup.string().required(`${firstName.requiredErrorMsg}`),
 		[lastName.name]: Yup.string().required(`${lastName.requiredErrorMsg}`),
 		[gender.name]: Yup.string().required(`${gender.requiredErrorMsg}`),
+		// Ensure that the date of birth entered isn't beyond today
 		[dob.name]: Yup.string()
 			.nullable()
 			.required(`${dob.requiredErrorMsg}`)
 			.test('dob', dob.invalidErrorMsg, val => {
 				if (val) {
-					const startDate = new Date();
-					const endDate = new Date(2050, 12, 31);
+					const startDate = new Date(1900, 12, 31);
+					const endDate = new Date();
 					if (moment(val, moment.ISO_8601).isValid()) {
 						return moment(val).isBetween(startDate, endDate);
 					}

@@ -1,6 +1,5 @@
 import React from "react";
 import { useField, Field } from "formik";
-// import * as Yup from 'yup';
 
 const RadioField = ({ label, ...props }) => {
 	const [meta] = useField(props);
@@ -8,14 +7,18 @@ const RadioField = ({ label, ...props }) => {
 		<>
 			<label>{label}</label>
 			
-			
+			<div className="radio-group">
 			{props.data.map((radioObject, i) => 
-				<label key={i}>
-					{/*<input type="radio" value={radioObject.value} name={props.name} id={radioObject.label} {...field}/>*/}
-					<Field type="radio" name={props.name} value={radioObject.value}/>
+				<>
+				<Field type="radio" name={props.name} value={radioObject.value} id={radioObject.value}/>
+				<label key={i} className="radio" htmlFor={radioObject.value}>
+					
 					{radioObject.label}
 				</label>
+				
+				</>
 			)}
+			</div>
 			
 			{meta.error ? (
 				<div className="error">{meta.error}</div>

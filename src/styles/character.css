@@ -1,9 +1,9 @@
 #characterCont {
-	width: 20vw;
+	width: 55vw;
 	/*height: 50vh;*/
 
-	margin-left: 10vw;
-	margin-top: 5vh;
+	margin-left: 0vw;
+	margin-top: 4vh;
 
 	display: flex;
 	flex-direction: column-reverse;
@@ -27,3 +27,8 @@
 		margin-top: -4.5vh;
 		margin-left: 3vh;
 	}
+
+.char-blurb {
+	margin-top: 1vh;
+	text-align: center;
+}

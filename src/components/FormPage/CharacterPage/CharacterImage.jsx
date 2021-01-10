@@ -59,7 +59,7 @@ export default function CharacterImage(props) {
 
 	return (
 		<React.Fragment>
-			<h1>{props.values.firstName} {props.values.lastName}</h1>
+			
 			<div id="characterCont">
 				{/*{<img id="legs" src= {pants} />}*/}
 				{<Logo fill={props.values.favouriteColour} className="legs"/>}
@@ -68,14 +68,15 @@ export default function CharacterImage(props) {
 				    {
 				    	'chef': chef,
 				      	'developer': developer,
-				      	'social-media': socialMedia,
-				      	'yoga': yoga
+				      	'social media influencer': socialMedia,
+				      	'yoga instructor': yoga
 				    }[props.values.occupation]
 				}
 				/>
 				<img id="head" src={getHead()} />
 				
 			</div>
+			<p className="char-blurb">{`What's up, I'm ${props.values.firstName} ${props.values.lastName}, age ${calcAge(props.values.dob)} and I'm a world class ${props.values.occupation}`} </p>
 		</React.Fragment>
 	);
 }

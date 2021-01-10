@@ -54,6 +54,17 @@ export default function FormPage() {
 
 	return (
 	    <React.Fragment>
+	    	<div className="stepper">
+	    		<div className={`${activeStep==0 ? "active" : ""} ${activeStep>0 ? "visited" : ""}`}>
+	    			Personal Details
+	    		</div>
+	    		<div className={`${activeStep==1 ? "active" : ""} ${activeStep>1 ? "visited" : ""}`}>
+	    			Lifestyle Details
+	    		</div>
+	    		<div className={`${activeStep==2 ? "active" : ""} ${activeStep>2 ? "visited" : ""}`}>
+	    			Persona
+	    		</div>
+	    	</div>
 	        <Formik
             	initialValues={formInitialValues}
             	validationSchema={currentValidationSchema}
@@ -61,28 +72,27 @@ export default function FormPage() {
           	>
           		{({ isSubmitting }) => (
           			<Form id={formId}>
-                		{_renderStepContent(activeStep)}
-
-                		<div>
+          				<div className="form-body">
+                			{_renderStepContent(activeStep)}
+                		</div>
+                		<div className="control-bar">
                 			
                 			{/*Prevent user from clicking back during first step */}
                 				{(activeStep !== 0) && (isLastStep) && (
-	                				<button onClick={_handleBack}>
+	                				<button onClick={_handleBack} className="control-back">
 	                					Back
 	                				</button>
 	                			)}
 	                		
 
-	                		<div>
 	                			{ activeStep !== steps.length ? 
-		                			<button type="submit">
+		                			<button type="submit" className="control-submit">
 										{isLastStep ? "View Persona" : "Next"}
 									</button> 
 								: 
 									null 
 								}
 								
-	                		</div>
                 			
                 		</div>
               		</Form>

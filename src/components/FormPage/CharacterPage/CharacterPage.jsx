@@ -17,11 +17,10 @@ export default function CharacterPage() {
 	} = formValues;
 	return (
 		<React.Fragment>
-			<h2>Character</h2>
+		<CharacterImage values={formValues}/>
+			
 
-			<p>{`${firstName} ${lastName} is a ${gender} born on ${dob}, who works as a ${occupation} and their favourite colour is ${favouriteColour}`} </p>
-
-			<CharacterImage values={formValues}/>
+			
 		</React.Fragment>
 	);
 }

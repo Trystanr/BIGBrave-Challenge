@@ -59,6 +59,7 @@ const IndexPage = () => {
   return (
     <>
       <h1>Persona Time!</h1>
+      <FormPage />
       <Formik
         initialValues={{
           firstName: '',

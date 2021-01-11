@@ -1,5 +1,5 @@
 import React from "react";
-import { useField } from "formik";
+import { useField, Formik } from "formik";
 
 import { CirclePicker  } from 'react-color';
 
@@ -9,9 +9,10 @@ const ColorField = ({ label, ...props }) => {
 		setValue(newColor.hex);
 	};
 
-	const [meta, helpers] = useField(props.name);
+	// const [meta, helpers] = useField(props.name);
+	const [field, meta, helpers] = useField(props.name);
 
-	 const { setValue } = helpers;
+	const { setValue } = helpers;
 	
 
 	return (

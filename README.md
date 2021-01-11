@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-    [Live Version](https://bigbrave-challenge.web.app/)
+  <a href="https://bigbrave-challenge.web.app/">View the web app live</a>
 </h3>
 
 ## 🚀 Quick start
